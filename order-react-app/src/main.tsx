@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './pages/Layout.tsx'
 import Home from './pages/Home.tsx'
 import MetalStructures from './pages/MetalStructures.tsx'
@@ -13,7 +13,7 @@ import Contacts from './pages/Contacts.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="/" element={<Layout children={<Home />} />} />
           <Route path="/metal-structures" element={<Layout children={<MetalStructures />} />} />
@@ -23,6 +23,6 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/portfolio" element={<Layout children={<Portfolio />} />} />
           <Route path="/contacts" element={<Layout children={<Contacts />} />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
   </StrictMode>,
 )

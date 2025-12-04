@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './css/Layout.module.css';
+import { Link } from 'react-router-dom';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,27 +14,37 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
-            <li>
-              <a href="/" className={styles.navLink}>Главная</a>
-            </li>
-            <li>
-              <a href="/metal-structures" className={styles.navLink}>Металлоконструкции</a>
-            </li>
-            <li>
-              <a href="/decoration-works" className={styles.navLink}>Отделочные работы</a>
-            </li>
-            <li>
-              <a href="/house-building" className={styles.navLink}>Строительство дома</a>
-            </li>
-            <li>
-              <a href="/design" className={styles.navLink}>Проектирование</a>
-            </li>
-            <li>
-              <a href="/portfolio" className={styles.navLink}>Примеры работ</a>
-            </li>
-            <li>
-              <a href="/contacts" className={styles.navLink}>Контакты</a>
-            </li>
+            <Link to="/">
+              <li>
+                <a href="/" className={styles.navLink}>Главная</a>
+              </li>
+            </Link>
+            <Link to="/metal-structures">
+              <li>
+                <a className={styles.navLink}>Металлоконструкции</a>
+              </li>
+            </Link>
+            <Link to="/house-building">            
+              <li>
+                <a className={styles.navLink}>Строительство дома</a>
+              </li>
+            </Link>
+            <Link to="/design">
+              <li>
+                <a className={styles.navLink}>Проектирование</a>
+              </li>
+            </Link>
+            <Link to="/portfolio">
+              <li>
+                <a className={styles.navLink}>Примеры работ</a>
+              </li>
+            </Link>
+            <Link to="/contacts">
+              <li>
+                <a className={styles.navLink}>Контакты</a>
+              </li>
+            </Link>
+
           </ul>
         </nav>
       </header>
