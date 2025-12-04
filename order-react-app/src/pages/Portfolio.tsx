@@ -56,16 +56,18 @@ const Portfolio: React.FC = () => {
         <h2 className={styles.title}>Наши реализованные проекты</h2>
         <div className={styles.grid}>
           {projects.map((project) => (
-            <Link to={`/portfolio/${project.id}`} className={styles.card} key={project.id}>
-              <div
-                className={styles.image}
-                style={{ backgroundImage: `url(${project.imageUrl})` }}
-              />
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{project.title}</h3>
-                <p className={styles.cardDescription}>{project.description}</p>
-              </div>
-            </Link>
+            // <Link to={`/portfolio/${project.id}`} className={styles.card} key={project.id}>
+            <div>
+                <div
+                  className={styles.image}
+                  style={{ backgroundImage: `url(${project.imageUrl})` }}
+                />
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{project.title}</h3>
+                  <p className={styles.cardDescription}>{project.description}</p>
+                </div>`
+            </div>
+            // </Link>
           ))}
         </div>
       </div>
