@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './css/Portfolio.module.css';
 
 interface Project {
@@ -57,7 +56,7 @@ const Portfolio: React.FC = () => {
         <div className={styles.grid}>
           {projects.map((project) => (
             // <Link to={`/portfolio/${project.id}`} className={styles.card} key={project.id}>
-            <div>
+            <div className={styles.card}>
                 <div
                   className={styles.image}
                   style={{ backgroundImage: `url(${project.imageUrl})` }}
@@ -65,7 +64,7 @@ const Portfolio: React.FC = () => {
                 <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>{project.title}</h3>
                   <p className={styles.cardDescription}>{project.description}</p>
-                </div>`
+                </div>
             </div>
             // </Link>
           ))}

@@ -3,8 +3,8 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100%;
-  min-height: 500px;
+  min-height: 100vh; /* ✅ Теперь всегда занимает весь экран */
+  height: auto; /* ❗️Важно: не фиксируем высоту, чтобы не ломать адаптивность */
   background: url('https://avatars.mds.yandex.net/get-altay/12728107/2a000001916c5723d89ac609cbed235a71e4/orig') no-repeat center center;
   background-size: cover;
   display: flex;
@@ -14,17 +14,18 @@
   color: white;
   text-align: center;
   box-sizing: border-box;
+  padding: 2rem 1rem; /* ✅ Добавляем padding вместо margin в .content */
 }
 
 .content {
-  padding: 2rem;
-  margin: 2rem;
+  /* Убираем margin и padding — переносим в .hero */
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
-  background-color: rgb(81, 81, 87);
+  background-color: rgba(81, 81, 87, 0.85); /* ✅ Прозрачность через rgba, а не opacity */
   border-radius: 30px;
-  opacity: 0.9;
+  padding: 2rem; /* ✅ Оставляем только padding */
+  backdrop-filter: blur(10px); /* ✅ Добавляем размытие для эффекта "стекла" */
 }
 
 .title {
@@ -67,7 +68,7 @@
 }
 
 .highlight {
-  color: #00c4cc; /* бирюзовый акцент */
+  color: #00c4cc;
   font-weight: 700;
 }
 
@@ -80,7 +81,7 @@
 }
 
 .secondaryButton {
-  background-color: #d4b08c; /* бежевый */
+  background-color: #d4b08c;
   color: #1a3a5f;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -99,7 +100,7 @@
 }
 
 .primaryButton {
-  background-color: #00c4cc; /* бирюзовый */
+  background-color: #00c4cc;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -123,20 +124,30 @@
   margin-top: 1rem;
 }
 
-/* Адаптивность */
+/* ================== */
+/* АДАПТИВНЫЕ СТИЛИ */
+/* ================== */
+
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    min-height: 500px;
-    padding: 4rem 1rem 2rem;
+    min-height: 100vh; /* ✅ Остаётся на весь экран */
+    padding: 3rem 1rem; /* ✅ Уменьшаем отступы сверху/снизу */
+    justify-content: flex-start; /* ✅ Контент не уходит вниз */
+  }
+
+  .content {
+    padding: 1.5rem; /* ✅ Уменьшаем внутренние отступы */
+    border-radius: 20px; /* ✅ Меньше закругление */
   }
 
   .title {
     font-size: 2.2rem;
+    margin-top: 1rem; /* ✅ Добавляем отступ сверху */
   }
 
   .description {
     font-size: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .features {
@@ -161,5 +172,28 @@
     max-width: 300px;
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
+  }
+
+  .footerText {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0.75rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .featureItem {
+    font-size: 0.85rem;
+    flex: 1;
   }
 }

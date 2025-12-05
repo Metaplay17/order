@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; // или используйте <a>, если не используете роутинг
+import { Link } from 'react-router-dom';
 import styles from './css/Home.module.css';
 
 const Home = () => {
