@@ -55,7 +55,6 @@ const Portfolio: React.FC = () => {
         <h2 className={styles.title}>Наши реализованные проекты</h2>
         <div className={styles.grid}>
           {projects.map((project) => (
-            // <Link to={`/portfolio/${project.id}`} className={styles.card} key={project.id}>
             <div className={styles.card}>
                 <div
                   className={styles.image}
@@ -66,7 +65,6 @@ const Portfolio: React.FC = () => {
                   <p className={styles.cardDescription}>{project.description}</p>
                 </div>
             </div>
-            // </Link>
           ))}
         </div>
       </div>

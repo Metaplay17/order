@@ -12,13 +12,13 @@ const Home = () => {
                 <h2>Изготовление металлоконструкций</h2>
             </Link>
             <Link to="/decoration-works" className={styles.card}>
-                <h2>Отделка жилых и коммерческих помещений</h2>
+                <h2>Ремонт жилых и коммерческих помещений</h2>
             </Link>
             <Link to="/house-building" className={styles.card}>
                 <h2>Строительство дома под ключ</h2>
             </Link>
             <Link to="/design" className={styles.card}>
-                <h2>Проектирование</h2>
+                <h2>Проектирование и дизайн</h2>
             </Link>
             </div>
         </div>

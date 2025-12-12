@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './css/Layout.module.css';
 import { Link } from 'react-router';
+import logo from '../assets/Logo.png';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -23,8 +24,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className={styles.header}>
         <nav className={styles.nav}>
           {/* Логотип или название можно добавить сюда */}
-          <div style={{ color: '#e0e0e0', fontWeight: 'bold', fontSize: '1.2rem' }}>
-            СтройПрофи
+          <div className={styles.logo_block}>
+            <img className={styles.logo} src={logo} alt="Logo" />
+            <span>АРС СТРОЙ</span>
           </div>
 
           <button
@@ -92,7 +94,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <p className={styles.footerText}>
-            © {currentYear} «СтройПрофи» — надёжное строительство с 2010 года
+            © {currentYear} «АРС СТРОЙ» — Архитектура Ремонт Строительство
           </p>
         </div>
       </footer>
