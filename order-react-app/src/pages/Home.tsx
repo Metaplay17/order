@@ -18,7 +18,7 @@ const Home = () => {
                 <h2>Строительство дома под ключ</h2>
             </Link>
             <Link to="/design" className={styles.card}>
-                <h2>Проектирование и дизайн</h2>
+                <h2>Дизайн и проектирование</h2>
             </Link>
             </div>
         </div>

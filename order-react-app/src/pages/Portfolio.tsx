@@ -1,50 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './css/Portfolio.module.css';
+
+import withzh1 from '../assets/projects/withzn/1.jpg';
+import withzh2 from '../assets/projects/withzn/2.jpg';
+import withzh3 from '../assets/projects/withzn/3.jpg';
+import withzh4 from '../assets/projects/withzn/4.jpg';
+
+import foroffieceroom1 from '../assets/projects/foroffieceroom/1.jpg';
+import foroffieceroom2 from '../assets/projects/foroffieceroom/2.jpg';
+import foroffieceroom3 from '../assets/projects/foroffieceroom/3.jpg';
+import foroffieceroom4 from '../assets/projects/foroffieceroom/4.jpg';
+
+import last1 from '../assets/projects/last/1.jpg';
+import last2 from '../assets/projects/last/2.jpg';
+import last3 from '../assets/projects/last/3.png';
+import last4 from '../assets/projects/last/4.png';
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  imageUrl: string;
+  images: string[];
 }
-
 
 const projects: Project[] = [
   {
     id: 1,
-    title: 'Жилой дом в Подмосковье',
-    description: 'Кирпичный дом 220 м² с гаражом и террасой. Сдан в срок — за 4 месяца.',
-    imageUrl: 'https://afystatic.ru/files/vpbb/full/c/c1/c1dac14bc449c5c9ddc505001265035300.webp',
+    title: "Проектирование с последующим изготовлением и монтажом лестницы с применением холодного цинкования",
+    description: "Здесь будет описание проекта",
+    images: [withzh1, withzh2, withzh3, withzh4]
   },
   {
     id: 2,
-    title: 'Офисный центр, Москва',
-    description: 'Комплексная отделка 1200 м². Использованы экологичные материалы.',
-    imageUrl: 'https://avatars.mds.yandex.net/i?id=b1bb00322da51e2fa00f4bfec70d59a89a3256d6-15415022-images-thumbs&n=13',
+    title: "Проектирование с последующим изготовлением и монтажом лестницы для многоуровневого офисного помещения",
+    description: "Здесь будет описание проекта",
+    images: [foroffieceroom1, foroffieceroom2, foroffieceroom3, foroffieceroom4]
   },
   {
     id: 3,
-    title: 'Металлоконструкции для ТЦ',
-    description: 'Производство и монтаж несущих ферм и фасадных элементов.',
-    imageUrl: 'https://avatars.mds.yandex.net/i?id=62314cbb5efb96b724a32a091c9bd82c_l-5843049-images-thumbs&n=13',
-  },
-  {
-    id: 4,
-    title: 'Ремонт квартиры 85 м²',
-    description: 'Евро-ремонт под ключ с авторским дизайном интерьера.',
-    imageUrl: 'https://avatars.mds.yandex.net/i?id=ebbbd1a788f171b2ae2f40f8b59bb68c0169148d-16514385-images-thumbs&n=13',
-  },
-  {
-    id: 5,
-    title: 'Проект коттеджа 300 м²',
-    description: 'Полный архитектурный и инженерный проект с 3D-визуализацией.',
-    imageUrl: 'https://avatars.mds.yandex.net/get-mpic/4342845/2a000001923220412e6a94ce7c3305de9bcd/orig',
-  },
-  {
-    id: 6,
-    title: 'Складской комплекс',
-    description: 'Быстровозводимое здание из ЛМК площадью 2500 м².',
-    imageUrl: 'https://grand-mo.ru/images/torgovie/31ware/tp_31_01.jpg',
+    title: "Проектирование с последующим изготовлением и монтажом наружной пожарной лестницы",
+    description: "Здесь будет описание проекта",
+    images: [last1, last2, last3, last4]
   },
 ];
 
@@ -55,21 +51,64 @@ const Portfolio: React.FC = () => {
         <h2 className={styles.title}>Наши реализованные проекты</h2>
         <div className={styles.grid}>
           {projects.map((project) => (
-            <div className={styles.card}>
-                <div
-                  className={styles.image}
-                  style={{ backgroundImage: `url(${project.imageUrl})` }}
-                />
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
-                  <p className={styles.cardDescription}>{project.description}</p>
-                </div>
-            </div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
     </section>
   );
 };
+
+const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handlePrevClick = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.imageContainer}>
+        {/* Кнопка "Назад" */}
+        <button
+          className={`${styles.arrowButton} ${styles.leftArrow}`}
+          onClick={handlePrevClick}
+          aria-label="Предыдущее изображение"
+        >
+          ❮
+        </button>
+
+        {/* Текущее изображение */}
+        <div
+          className={styles.image}
+          style={{ backgroundImage: `url(${project.images[currentImageIndex]})` }}
+        />
+
+        {/* Кнопка "Вперед" */}
+        <button
+          className={`${styles.arrowButton} ${styles.rightArrow}`}
+          onClick={handleNextClick}
+          aria-label="Следующее изображение"
+        >
+          ❯
+        </button>
+      </div>
+
+      <div className={styles.cardContent}>
+        <h3 className={styles.cardTitle}>{project.title}</h3>
+        <p className={styles.cardDescription}>{project.description}</p>
+      </div>
+    </div>
+  );
+};
+
 
 export default Portfolio;

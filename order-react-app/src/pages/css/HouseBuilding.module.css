@@ -5,7 +5,7 @@
   width: 100%;
   min-height: 100%;
   min-height: 500px;
-  background: url('https://frankfurt.apollo.olxcdn.com/v1/files/2of1xk91hcwy1-KZ/image;s=1400x788') no-repeat center center;
+  background: url('../../assets/house-building.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
   flex-direction: column;
