@@ -5,8 +5,8 @@ const Repair: React.FC = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
-        <h1 className={styles.title}>РЕМОНТ КВАРТИР В МОСКВЕ И МОСКОВСКОЙ ОБЛАСТИ</h1>
-        <p className={styles.subtitle}>Мы берём на себя весь процесс — от сметы до идеального результата</p>
+        <h1 className={styles.title}>РЕМОНТ ЖИЛЫХ И КОММЕРЧЕСКИХ ПОМЕЩЕНИЙ В МОСКВЕ И МОСКОВСКОЙ ОБЛАСТИ</h1>
+        <p className={styles.subtitle}>Мы берём на себя весь процесс — от сметы до идеального результата. У нас самые низкие цены на материалы и мебель, мы работаем с заводами изготовителями напрямую без посредников.</p>
 
         <div className={styles.features}>
           <div className={styles.featureItem}>
@@ -15,7 +15,7 @@ const Repair: React.FC = () => {
           </div>
           <div className={styles.featureItem}>
             <span className={styles.checkmark}>✓</span>
-            <span>Ремонт от <strong className={styles.highlight}>6 890 ₽/м²</strong></span>
+            <span>Ремонт от <strong className={styles.highlight}>9 000 ₽/м²</strong></span>
           </div>
           <div className={styles.featureItem}>
             <span className={styles.checkmark}>✓</span>

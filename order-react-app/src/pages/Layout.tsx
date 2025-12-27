@@ -23,12 +23,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className={styles.layout}>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          {/* Логотип или название можно добавить сюда */}
           <div className={styles.logo_block}>
             <img className={styles.logo} src={logo} alt="Logo" />
             <span>АРС СТРОЙ</span>
           </div>
-
           <button
             className={styles.burgerButton}
             onClick={toggleMenu}
@@ -86,6 +84,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </li>
             </Link>
           </ul>
+          <span className={styles.open_time}>Пн-Пт с 9:00 до 18:00</span>
         </nav>
       </header>
 

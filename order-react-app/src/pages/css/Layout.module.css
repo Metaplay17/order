@@ -36,13 +36,20 @@
 }
 
 .nav {
-  max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   gap: 20px;
   align-items: center;
   height: 70px;
+}
+
+.open_time {
+  color: white;
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
 }
 
 .navList {

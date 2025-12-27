@@ -25,7 +25,6 @@
   background-color: rgba(81, 81, 87, 0.85); /* ✅ Прозрачность через rgba, а не opacity */
   border-radius: 30px;
   padding: 2rem; /* ✅ Оставляем только padding */
-  backdrop-filter: blur(10px); /* ✅ Добавляем размытие для эффекта "стекла" */
 }
 
 .title {
