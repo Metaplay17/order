@@ -173,9 +173,10 @@
 }
 
 .metalconstruction__image {
-    width: 100%;
-    height: 300px;
-    background: red;
+  width: 100%;
+  height: 200px; /* или 300px на десктопе — лучше задавать в media-запросах */
+  object-fit: cover;
+  display: block;
 }
 
 .metalconstruction__card__tittle {
@@ -215,5 +216,119 @@
 
   .statItem {
     max-width: 100%;
+  }
+}
+
+/* Адаптивность для content_block и карточек */
+@media (max-width: 768px) {
+  .content_block {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .metalconstruction__card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metalconstruction__image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover; /* если используете <img>, а не background */
+  }
+
+  .metalconstruction__card__tittle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .metalconstruction__card__list {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .metalconstruction__card__element {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  /* Адаптация заголовка и кнопки */
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaButton {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* Адаптация процесса */
+  .process_steps {
+    padding: 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .step_number {
+    font-size: 1.75rem;
+    min-width: auto;
+  }
+
+  .step_text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+}
+
+/* Мелкие экраны: до 480px */
+@media (max-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 2rem 1rem 1rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .statItem h3 {
+    font-size: 1.5rem;
+  }
+
+  .statItem p {
+    font-size: 0.875rem;
+  }
+
+  .metalconstruction__card__tittle {
+    font-size: 1.1rem;
+  }
+
+  .step_number {
+    font-size: 1.5rem;
+  }
+
+  .step_text {
+    font-size: 0.9rem;
   }
 }

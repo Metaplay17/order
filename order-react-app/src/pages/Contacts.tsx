@@ -36,7 +36,7 @@ const Contacts: React.FC = () => {
             </div>
           </div>
 
-          <div className={styles.contactItem}>
+          {/* <div className={styles.contactItem}>
             <div className={styles.icon}>🤖</div>
             <div>
               <p className={styles.label}>Telegram-бот</p>
@@ -51,7 +51,7 @@ const Contacts: React.FC = () => {
                 </a>
               </p>
             </div>
-          </div>
+          </div> */}
 
           <div className={styles.contactItem}>
             <div className={styles.icon}>💬</div>

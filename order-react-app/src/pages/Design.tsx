@@ -1,8 +1,11 @@
 // src/components/HouseDesignHero/HouseDesignHero.tsx
 import React from 'react';
 import styles from './css/Design.module.css';
+import { useChat } from '../quiz/ChatContext';
 
 const Design: React.FC = () => {
+  const { openChat } = useChat();
+
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
@@ -25,8 +28,7 @@ const Design: React.FC = () => {
         </div>
 
         <div className={styles.buttons}>
-          <button className={styles.secondaryButton}>Скачать каталог проектов</button>
-          <button className={styles.primaryButton}>Оставить заявку</button>
+          <button className={styles.primaryButton} onClick={openChat}>Оставить заявку</button>
         </div>
 
         <p className={styles.footerText}>

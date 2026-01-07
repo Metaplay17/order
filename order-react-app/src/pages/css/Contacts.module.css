@@ -7,8 +7,7 @@
 .container {
   flex: 1;
   margin: 0 auto;
-  /* padding: 0 1.5rem; */
-  padding-inline: 30vw;
+  padding: 0 1.5rem;
 }
 
 .title {

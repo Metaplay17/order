@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './css/Repair.module.css';
+import { useChat } from '../quiz/ChatContext';
 
 const Repair: React.FC = () => {
+  const { openChat } = useChat();
+
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
@@ -27,7 +30,7 @@ const Repair: React.FC = () => {
           </div>
         </div>
 
-        <button className={styles.ctaButton}>Получить смету</button>
+        <button className={styles.ctaButton} onClick={openChat}>Получить смету</button>
 
         <div className={styles.stats}>
           <div className={styles.statItem}>

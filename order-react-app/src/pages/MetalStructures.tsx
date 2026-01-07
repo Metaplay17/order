@@ -7,6 +7,7 @@ import metal_ladder from '../assets/metals/metal-ladder.png';
 import floors from '../assets/metals/floors.png';
 import screw from '../assets/metals/screw.png';
 import tests from '../assets/metals/tests.png';
+import { useChat } from '../quiz/ChatContext';
 
 interface Step {
   number: string;
@@ -39,6 +40,8 @@ const steps: Step[] = [
 
 
 const MetalStructures: React.FC = () => {
+    const { openChat } = useChat();
+
     return (
         <section className={styles.hero}>
             <div className={styles.content}>
@@ -61,7 +64,7 @@ const MetalStructures: React.FC = () => {
                     <p>В среднем выполняем заказ — не срываем согласованные сроки</p>
                 </div>
                 </div>
-                <button className={styles.ctaButton}>Оставить заявку</button>
+                <button className={styles.ctaButton} onClick={openChat}>Оставить заявку</button>
             </div>
 
             <section className={styles.content}>

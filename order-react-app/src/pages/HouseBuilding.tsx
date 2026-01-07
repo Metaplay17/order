@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './css/HouseBuilding.module.css';
+import { useChat } from '../quiz/ChatContext';
 
 const HouseBuilding: React.FC = () => {
+  const { openChat } = useChat();
+
   return (
     <section className={styles.hero}>
       <div className={styles.content}>
@@ -25,8 +28,8 @@ const HouseBuilding: React.FC = () => {
         </div>
 
         <div className={styles.buttons}>
-          <button className={styles.secondaryButton}>Узнать стоимость строительства</button>
-          <button className={styles.primaryButton}>Круглогодичное строительство</button>
+          <button className={styles.secondaryButton} onClick={openChat}>Узнать стоимость строительства</button>
+          <button className={styles.primaryButton} onClick={openChat}>Круглогодичное строительство</button>
         </div>
 
         <p className={styles.footerText}>

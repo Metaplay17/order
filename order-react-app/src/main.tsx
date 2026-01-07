@@ -10,9 +10,11 @@ import HouseBuilding from './pages/HouseBuilding.tsx'
 import Design from './pages/Design.tsx'
 import Portfolio from './pages/Portfolio.tsx'
 import Contacts from './pages/Contacts.tsx'
+import { ChatProvider } from './quiz/ChatContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <ChatProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Layout children={<Home />} />} />
@@ -24,5 +26,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/contacts" element={<Layout children={<Contacts />} />} />
         </Routes>
       </Router>
+    </ChatProvider>
+
   </StrictMode>,
 )

@@ -121,6 +121,48 @@
 /* АДАПТИВНЫЕ СТИЛИ */
 /* ================== */
 
+@media (max-width: 1280px) {
+  .navList {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #1a3a5f;
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s ease-in-out;
+  }
+
+  .navList.open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .navLink {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .burgerButton {
+    display: block;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .open_time {
+    color: white;
+    padding: 0.5rem 0.75rem;
+    white-space: wrap;
+  }
+}
+
 @media (max-width: 768px) {
   .navList {
     position: absolute;
@@ -154,6 +196,12 @@
 
   .main {
     padding: 0;
+  }
+
+  .open_time {
+    color: white;
+    padding: 0.5rem 0.75rem;
+    white-space: wrap;
   }
 }
 

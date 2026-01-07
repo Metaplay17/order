@@ -38,6 +38,20 @@ import repair_3_1 from '../assets/projects/repair_3/1.png';
 import repair_3_2 from '../assets/projects/repair_3/2.png';
 import repair_3_3 from '../assets/projects/repair_3/3.png';
 
+import kashir_1 from '../assets/projects/decorating/kashir/1.jpg';
+import kashir_2 from '../assets/projects/decorating/kashir/2.jpg';
+import kashir_3 from '../assets/projects/decorating/kashir/3.jpg';
+import kashir_4 from '../assets/projects/decorating/kashir/4.jpg';
+import kashir_5 from '../assets/projects/decorating/kashir/5.jpg';
+import kashir_6 from '../assets/projects/decorating/kashir/6.jpg';
+import kashir_7 from '../assets/projects/decorating/kashir/7.jpg';
+
+import michur_1 from '../assets/projects/decorating/michur/1.jpg';
+import michur_2 from '../assets/projects/decorating/michur/2.jpg';
+import michur_3 from '../assets/projects/decorating/michur/3.jpg';
+import michur_4 from '../assets/projects/decorating/michur/4.jpg';
+import michur_5 from '../assets/projects/decorating/michur/5.jpg';
+
 
 
 interface Project {
@@ -48,7 +62,7 @@ interface Project {
   images: string[];
 }
 
-const projects_types = ["Изготовление металлоконструкций", "Дизайн проекты", "Ремонт коммерческих и жилых помещений"];
+const projects_types = ["Изготовление металлоконструкций", "Дизайн проекты", "Ремонт коммерческих и жилых помещений", "Отделка коммерческих помещений"];
 
 const projects: Project[] = [
   {
@@ -114,6 +128,20 @@ const projects: Project[] = [
     type: "Ремонт коммерческих и жилых помещений",
     description: "Здесь будет описание проекта",
     images: [repair_3_1, repair_3_2, repair_3_3]
+  },
+  {
+    id: 10,
+    title: "г. Москва, Каширское шоссе",
+    type: "Отделка коммерческих помещений",
+    description: "Отделка коммерческого помещения 440 м² (17000р/м² по полу) по адресу: г. Москва, Каширское шоссе. Срок реализации - 35 дней",
+    images: [kashir_1, kashir_2, kashir_3, kashir_4, kashir_5, kashir_6, kashir_7]
+  },
+  {
+    id: 11,
+    title: "г. Москва, Мичуринский проспект",
+    type: "Отделка коммерческих помещений",
+    description: "Отделка коммерческого помещения 117 м² под офис – г. Москва, Мичуринский проспект. 19000р/м², срок реализации - 26 дней вместе с демонтажом и перепланировкой.",
+    images: [michur_1, michur_2, michur_3, michur_4, michur_5]
   }
 ];
 

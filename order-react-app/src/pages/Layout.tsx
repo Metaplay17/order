@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './css/Layout.module.css';
 import { Link } from 'react-router';
 import logo from '../assets/Logo.png';
+import ChatWidget from '../quiz/ChatWidget';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -88,6 +89,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </nav>
       </header>
 
+      <ChatWidget />
       <main className={styles.main}>{children}</main>
 
       <footer className={styles.footer}>
