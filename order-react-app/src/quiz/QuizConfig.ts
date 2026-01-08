@@ -166,7 +166,7 @@ export const quizConfig : QuizConfig = {
         'final': {
             id: 'final',
             text: 'Спасибо за заявку! Менеджер свяжется с вами для уточнения деталей в ближайшее время',
-            type: 'text',
+            type: 'select',
             options: [
                 { id: 'restart', text: 'Заполнить еще раз', next: 'init_question' }
             ]

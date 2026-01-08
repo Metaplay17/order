@@ -136,6 +136,15 @@ const ChatWidget: React.FC = () => {
     const now = Date.now();
     const timeDiff = now - state.lastInteraction;
 
+    if (value.trim() === '') {
+      addMessage({
+        type: 'bot',
+        text: 'Пожалуйста, введите текст.',
+        timestamp: now,
+      });
+      return;
+    }
+
     if (timeDiff < SPAM_INTERVAL_MS && state.spamCount >= MAX_SPAM_COUNT) {
       addMessage({
         type: 'bot',
@@ -232,7 +241,6 @@ const ChatWidget: React.FC = () => {
         timestamp: Date.now(),
       });
     }
-      
   }
 
   const renderInput = () => {
@@ -346,7 +354,7 @@ const ChatWidget: React.FC = () => {
                 </div>
             ))}
             </div>
-          {currentQuestion.id !== 'final' && renderInput()}
+          {renderInput()}
         </div>
       )}
     </>
