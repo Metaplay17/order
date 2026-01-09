@@ -144,6 +144,154 @@
   right: 10px;
 }
 
+
+
+/* Модальное окно */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 75vw;
+  max-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImage {
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: #fff;
+  color: #000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s;
+}
+
+.closeButton:hover {
+  background: #f0f0f0;
+}
+
+@media (max-width: 1024px) {
+  .arrowButton {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Адаптивность для модального окна */
+
+/* iPhone SE / старые маленькие телефоны */
+@media (max-width: 375px) {
+  .modalImage {
+    max-width: 95vw;
+  }
+
+  .modalContent {
+    max-width: 95vw;
+    max-height: 85vh;
+  }
+
+  .closeButton {
+    right: 0px;
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+}
+
+/* Pixel / чуть большие телефоны */
+@media (min-width: 376px) and (max-width: 412px) {
+  .modalContent {
+    max-width: 92vw;
+    max-height: 82vh;
+  }
+
+  .modalImage {
+    max-width: 92vw;
+  }
+
+  .closeButton {
+    top: -48px;
+    right: 0px;
+    width: 38px;
+    height: 38px;
+    font-size: 23px;
+  }
+}
+
+/* Планшеты (iPad, Android tablets) */
+@media (min-width: 413px) and (max-width: 768px) {
+  .modalContent {
+    max-width: 90vw;
+    max-height: 80vh;
+  }
+
+  .modalImage {
+    max-width: 90vw;
+  }
+
+  .closeButton {
+    top: -50px;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+/* Планшеты в альбомной ориентации / маленькие ноутбуки */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .modalContent {
+    max-width: 80vw;
+    max-height: 75vh;
+  }
+
+  .closeButton {
+    top: -42px;
+    right: -42px;
+    width: 42px;
+    height: 42px;
+    font-size: 26px;
+  }
+}
+
+/* Десктопы (>1024px) — оставляем базовые стили как есть */
+@media (min-width: 1025px) {
+  /* Ничего не меняем — используем значения по умолчанию */
+}
+
+
+
+
+
 /* Адаптивность */
 @media (max-width: 992px) {
   .grid {

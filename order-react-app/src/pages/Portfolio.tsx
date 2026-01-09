@@ -25,10 +25,34 @@ import design_2_2 from '../assets/projects/design_2/2.png';
 import design_3_1 from '../assets/projects/design_3/1.png';
 import design_3_2 from '../assets/projects/design_3/2.png';
 import design_3_3 from '../assets/projects/design_3/3.png';
+import design_3_4 from '../assets/projects/design_3/4.png';
+
+import design_4_1 from '../assets/projects/design_4/1.png';
+import design_4_2 from '../assets/projects/design_4/2.png';
+import design_4_3 from '../assets/projects/design_4/3.png';
+import design_4_4 from '../assets/projects/design_4/4.png';
+import design_4_5 from '../assets/projects/design_4/5.png';
+import design_4_6 from '../assets/projects/design_4/6.png';
+import design_4_7 from '../assets/projects/design_4/7.png';
+import design_4_8 from '../assets/projects/design_4/8.png';
+
+import design_5_1 from '../assets/projects/design_5/1.png';
+import design_5_2 from '../assets/projects/design_5/2.png';
+import design_5_3 from '../assets/projects/design_5/3.png';
+import design_5_4 from '../assets/projects/design_5/4.png';
+import design_5_5 from '../assets/projects/design_5/5.png';
+import design_5_6 from '../assets/projects/design_5/6.png';
+
 
 import repair_1_1 from '../assets/projects/repair_1/1.png';
 import repair_1_2 from '../assets/projects/repair_1/2.png';
 import repair_1_3 from '../assets/projects/repair_1/3.png';
+import repair_1_4 from '../assets/projects/repair_1/4.png';
+import repair_1_5 from '../assets/projects/repair_1/5.png';
+import repair_1_6 from '../assets/projects/repair_1/6.png';
+import repair_1_7 from '../assets/projects/repair_1/7.png';
+import repair_1_8 from '../assets/projects/repair_1/8.png';
+import repair_1_9 from '../assets/projects/repair_1/9.png';
 
 import repair_2_1 from '../assets/projects/repair_2/1.png';
 import repair_2_2 from '../assets/projects/repair_2/2.png';
@@ -75,7 +99,7 @@ interface Project {
   images: string[];
 }
 
-const projects_types = ["Изготовление металлоконструкций", "Дизайн проекты", "Ремонт коммерческих и жилых помещений", "Отделка коммерческих помещений"];
+const projects_types = ["Изготовление металлоконструкций", "Дизайн проекты (флиппинг)", "Ремонт коммерческих и жилых помещений", "Отделка коммерческих помещений"];
 
 const projects: Project[] = [
   {
@@ -103,30 +127,30 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Дизайн проект 1",
-    type: "Дизайн проекты",
+    type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
     images: [design_1_1, design_1_2]
   },
   {
     id: 5,
     title: "Дизайн проект 2",
-    type: "Дизайн проекты",
+    type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
     images: [design_2_1, design_2_2]
   },
   {
     id: 6,
     title: "Дизайн проект 3",
-    type: "Дизайн проекты",
+    type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
-    images: [design_3_1, design_3_2, design_3_3]
+    images: [design_3_1, design_3_2, design_3_3, design_3_4]
   },
   {
     id: 7,
     title: "Зиларт",
     type: "Ремонт коммерческих и жилых помещений",
     description: "Здесь будет описание проекта",
-    images: [repair_1_1, repair_1_2, repair_1_3]
+    images: [repair_1_1, repair_1_2, repair_1_3, repair_1_4, repair_1_5, repair_1_6, repair_1_7, repair_1_8, repair_1_9]
   },
   {
     id: 8,
@@ -164,37 +188,88 @@ const projects: Project[] = [
     images: [repair_4_1, repair_4_2, repair_4_3, repair_4_4, repair_4_5]
   },
   {
-    id: 12,
-    title: "Отделка СУ",
+    id: 13,
+    title: "Отделка С/У в коттедже",
     type: "Ремонт коммерческих и жилых помещений",
     description: "Здесь будет описание проекта",
     images: [repair_5_1, repair_5_2, repair_5_3, repair_5_4, repair_5_5, repair_5_6]
   },
+  {
+    id: 14,
+    title: "Дизайн проект 4",
+    type: "Дизайн проекты (флиппинг)",
+    description: "Здесь будет описание проекта",
+    images: [design_4_1, design_4_2, design_4_3, design_4_4, design_4_5, design_4_6, design_4_7, design_4_8]
+  },
+  {
+    id: 15,
+    title: "Дизайн проект 5",
+    type: "Дизайн проекты (флиппинг)",
+    description: "Здесь будет описание проекта",
+    images: [design_5_1, design_5_2, design_5_3, design_5_4, design_5_5, design_5_6]
+  },
 ];
 
+
 const Portfolio: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const openModal = (image: string) => {
+    setSelectedImage(image);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>Наши реализованные проекты</h2>
-        {
-          projects_types.map((name) => (
-            <div className={styles.project_type}>
-              <h2>{name}</h2>
-              <div className={styles.grid}>
-                {projects.filter(p => p.type == name).map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+        {projects_types.map((name) => (
+          <div className={styles.project_type} key={name}>
+            <h2>{name}</h2>
+            <div className={styles.grid}>
+              {projects
+                .filter((p) => p.type === name)
+                .map((project) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onImageClick={openModal}
+                  />
                 ))}
-              </div>
             </div>
-          ))
-        }
+          </div>
+        ))}
       </div>
+
+      {/* Модальное окно */}
+      {selectedImage && (
+        <div className={styles.modalOverlay} onClick={closeModal}>
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()} // предотвращаем закрытие при клике на изображение
+          >
+            <button className={styles.closeButton} onClick={closeModal}>
+              &times;
+            </button>
+            <img
+              src={selectedImage}
+              alt="Полный просмотр"
+              className={styles.modalImage}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+const ProjectCard: React.FC<{ project: Project; onImageClick: (image: string) => void }> = ({
+  project,
+  onImageClick,
+}) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlePrevClick = () => {
@@ -209,10 +284,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
     );
   };
 
+  const handleClickImage = () => {
+    onImageClick(project.images[currentImageIndex]);
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        {/* Кнопка "Назад" */}
         <button
           className={`${styles.arrowButton} ${styles.leftArrow}`}
           onClick={handlePrevClick}
@@ -221,13 +299,12 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           ❮
         </button>
 
-        {/* Текущее изображение */}
         <div
           className={styles.image}
           style={{ backgroundImage: `url(${project.images[currentImageIndex]})` }}
+          onClick={handleClickImage}
         />
 
-        {/* Кнопка "Вперед" */}
         <button
           className={`${styles.arrowButton} ${styles.rightArrow}`}
           onClick={handleNextClick}
