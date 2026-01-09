@@ -38,6 +38,19 @@ import repair_3_1 from '../assets/projects/repair_3/1.png';
 import repair_3_2 from '../assets/projects/repair_3/2.png';
 import repair_3_3 from '../assets/projects/repair_3/3.png';
 
+import repair_4_1 from '../assets/projects/repair_4/1.jpg';
+import repair_4_2 from '../assets/projects/repair_4/2.jpg';
+import repair_4_3 from '../assets/projects/repair_4/3.jpg';
+import repair_4_4 from '../assets/projects/repair_4/4.jpg';
+import repair_4_5 from '../assets/projects/repair_4/5.jpg';
+
+import repair_5_1 from '../assets/projects/repair_5/1.jpg';
+import repair_5_2 from '../assets/projects/repair_5/2.jpg';
+import repair_5_3 from '../assets/projects/repair_5/3.jpg';
+import repair_5_4 from '../assets/projects/repair_5/4.jpg';
+import repair_5_5 from '../assets/projects/repair_5/5.jpg';
+import repair_5_6 from '../assets/projects/repair_5/6.jpg';
+
 import kashir_1 from '../assets/projects/decorating/kashir/1.jpg';
 import kashir_2 from '../assets/projects/decorating/kashir/2.jpg';
 import kashir_3 from '../assets/projects/decorating/kashir/3.jpg';
@@ -142,7 +155,21 @@ const projects: Project[] = [
     type: "Отделка коммерческих помещений",
     description: "Отделка коммерческого помещения 117 м² под офис – г. Москва, Мичуринский проспект. 19000р/м², срок реализации - 26 дней вместе с демонтажом и перепланировкой.",
     images: [michur_1, michur_2, michur_3, michur_4, michur_5]
-  }
+  },
+  {
+    id: 12,
+    title: "ВДНХ",
+    type: "Ремонт коммерческих и жилых помещений",
+    description: "Здесь будет описание проекта",
+    images: [repair_4_1, repair_4_2, repair_4_3, repair_4_4, repair_4_5]
+  },
+  {
+    id: 12,
+    title: "Отделка СУ",
+    type: "Ремонт коммерческих и жилых помещений",
+    description: "Здесь будет описание проекта",
+    images: [repair_5_1, repair_5_2, repair_5_3, repair_5_4, repair_5_5, repair_5_6]
+  },
 ];
 
 const Portfolio: React.FC = () => {

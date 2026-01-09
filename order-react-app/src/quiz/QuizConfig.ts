@@ -134,23 +134,11 @@ export const quizConfig : QuizConfig = {
             id: 'contacts_name',
             text: 'Введите ваше имя:',
             type: 'text',
-            next: 'contacts_phone'
+            next: 'contacts_data'
         },
-        'contacts_phone': {
-            id: 'contacts_phone',
-            text: 'Введите ваш телефон:',
-            type: 'text',
-            next: 'contacts_telegram'
-        },
-        'contacts_telegram': {
-            id: 'contacts_telegram',
-            text: 'Telegram-аккаунт (тег с "@"), (если нет, поставьте прочерк):',
-            type: 'text',
-            next: 'contacts_email',
-        },
-        'contacts_email': {
-            id: 'contacts_email',
-            text: 'Введите ваш email (если нет, поставьте прочерк)',
+        'contacts_data': {
+            id: 'contacts_data',
+            text: 'Введите контакты (телефон, Telegram):',
             type: 'text',
             next: 'contacts_accept'
         },
