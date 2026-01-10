@@ -21,6 +21,8 @@ import design_1_2 from '../assets/projects/design_1/2.png';
 
 import design_2_1 from '../assets/projects/design_2/1.png';
 import design_2_2 from '../assets/projects/design_2/2.png';
+import design_2_3 from '../assets/projects/design_2/3.jpg';
+import design_2_4 from '../assets/projects/design_2/4.jpg';
 
 import design_3_1 from '../assets/projects/design_3/1.png';
 import design_3_2 from '../assets/projects/design_3/2.png';
@@ -136,7 +138,7 @@ const projects: Project[] = [
     title: "Дизайн проект 2",
     type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
-    images: [design_2_1, design_2_2]
+    images: [design_2_1, design_2_2, design_2_3, design_2_4]
   },
   {
     id: 6,
@@ -210,17 +212,45 @@ const projects: Project[] = [
   },
 ];
 
+interface ModalState {
+  images: string[];
+  currentIndex: number;
+}
+
 
 const Portfolio: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [modal, setModal] = useState<ModalState | null>(null);
 
-  const openModal = (image: string) => {
-    setSelectedImage(image);
+  const openModal = (images: string[], index: number) => {
+    setModal({ images, currentIndex: index });
   };
 
   const closeModal = () => {
-    setSelectedImage(null);
+    setModal(null);
   };
+
+  const goToPrev = () => {
+    if (!modal) return;
+    const newIndex =
+      modal.currentIndex === 0 ? modal.images.length - 1 : modal.currentIndex - 1;
+    setModal({ ...modal, currentIndex: newIndex });
+  };
+
+  const goToNext = () => {
+    if (!modal) return;
+    const newIndex =
+      modal.currentIndex === modal.images.length - 1 ? 0 : modal.currentIndex + 1;
+    setModal({ ...modal, currentIndex: newIndex });
+  };
+
+  // Закрытие по нажатию Esc
+  React.useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    if (modal) window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [modal]);
 
   return (
     <section className={styles.section}>
@@ -236,7 +266,7 @@ const Portfolio: React.FC = () => {
                   <ProjectCard
                     key={project.id}
                     project={project}
-                    onImageClick={openModal}
+                    onImageClick={(index) => openModal(project.images, index)}
                   />
                 ))}
             </div>
@@ -245,20 +275,49 @@ const Portfolio: React.FC = () => {
       </div>
 
       {/* Модальное окно */}
-      {selectedImage && (
+      {modal && (
         <div className={styles.modalOverlay} onClick={closeModal}>
           <div
             className={styles.modalContent}
-            onClick={(e) => e.stopPropagation()} // предотвращаем закрытие при клике на изображение
+            onClick={(e) => e.stopPropagation()}
           >
+            {/* Кнопка закрытия */}
             <button className={styles.closeButton} onClick={closeModal}>
               &times;
             </button>
+
+            {/* Изображение */}
             <img
-              src={selectedImage}
-              alt="Полный просмотр"
+              src={modal.images[modal.currentIndex]}
+              alt={`Изображение ${modal.currentIndex + 1}`}
               className={styles.modalImage}
             />
+
+            {/* Стрелки навигации */}
+            {modal.images.length > 1 && (
+              <>
+                <button
+                  className={`${styles.modalArrow} ${styles.modalArrowLeft}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToPrev();
+                  }}
+                  aria-label="Предыдущее изображение"
+                >
+                  ❮
+                </button>
+                <button
+                  className={`${styles.modalArrow} ${styles.modalArrowRight}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goToNext();
+                  }}
+                  aria-label="Следующее изображение"
+                >
+                  ❯
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -266,10 +325,10 @@ const Portfolio: React.FC = () => {
   );
 };
 
-const ProjectCard: React.FC<{ project: Project; onImageClick: (image: string) => void }> = ({
-  project,
-  onImageClick,
-}) => {
+const ProjectCard: React.FC<{
+  project: Project;
+  onImageClick: (index: number) => void;
+}> = ({ project, onImageClick }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlePrevClick = () => {
@@ -285,7 +344,7 @@ const ProjectCard: React.FC<{ project: Project; onImageClick: (image: string) =>
   };
 
   const handleClickImage = () => {
-    onImageClick(project.images[currentImageIndex]);
+    onImageClick(currentImageIndex);
   };
 
   return (
