@@ -18,11 +18,10 @@ import last4 from '../assets/projects/last/4.png';
 
 import design_1_1 from '../assets/projects/design_1/1.png';
 import design_1_2 from '../assets/projects/design_1/2.png';
-
-import design_2_1 from '../assets/projects/design_2/1.png';
-import design_2_2 from '../assets/projects/design_2/2.png';
-import design_2_3 from '../assets/projects/design_2/3.jpg';
-import design_2_4 from '../assets/projects/design_2/4.jpg';
+import design_1_3 from '../assets/projects/design_1/3.png';
+import design_1_4 from '../assets/projects/design_1/4.jpg';
+import design_1_5 from '../assets/projects/design_1/5.png';
+import design_1_6 from '../assets/projects/design_1/6.jpg';
 
 import design_3_1 from '../assets/projects/design_3/1.png';
 import design_3_2 from '../assets/projects/design_3/2.png';
@@ -76,6 +75,35 @@ import repair_5_3 from '../assets/projects/repair_5/3.jpg';
 import repair_5_4 from '../assets/projects/repair_5/4.jpg';
 import repair_5_5 from '../assets/projects/repair_5/5.jpg';
 import repair_5_6 from '../assets/projects/repair_5/6.jpg';
+
+import repair_6_1 from '../assets/projects/repair_6/1.jpg';
+import repair_6_2 from '../assets/projects/repair_6/2.jpg';
+import repair_6_3 from '../assets/projects/repair_6/3.jpg';
+import repair_6_4 from '../assets/projects/repair_6/4.jpg';
+import repair_6_5 from '../assets/projects/repair_6/5.jpg';
+import repair_6_6 from '../assets/projects/repair_6/6.jpg';
+import repair_6_7 from '../assets/projects/repair_6/7.jpg';
+import repair_6_8 from '../assets/projects/repair_6/8.jpg';
+import repair_6_9 from '../assets/projects/repair_6/9.jpg';
+import repair_6_10 from '../assets/projects/repair_6/10.jpg';
+
+import vkusno_1 from '../assets/projects/vkusno/1.jpg';
+import vkusno_2 from '../assets/projects/vkusno/2.jpg';
+import vkusno_3 from '../assets/projects/vkusno/3.jpg';
+import vkusno_4 from '../assets/projects/vkusno/4.jpg';
+import vkusno_5 from '../assets/projects/vkusno/5.jpg';
+import vkusno_6 from '../assets/projects/vkusno/6.jpg';
+import vkusno_7 from '../assets/projects/vkusno/7.jpg';
+import vkusno_8 from '../assets/projects/vkusno/8.jpg';
+import vkusno_9 from '../assets/projects/vkusno/9.jpg';
+import vkusno_10 from '../assets/projects/vkusno/10.jpg';
+
+import gagava_1 from '../assets/projects/gagava/1.jpg';
+import gagava_2 from '../assets/projects/gagava/2.jpg';
+import gagava_3 from '../assets/projects/gagava/3.jpg';
+import gagava_4 from '../assets/projects/gagava/4.jpg';
+import gagava_5 from '../assets/projects/gagava/5.jpg';
+import gagava_6 from '../assets/projects/gagava/6.jpg';
 
 import kashir_1 from '../assets/projects/decorating/kashir/1.jpg';
 import kashir_2 from '../assets/projects/decorating/kashir/2.jpg';
@@ -131,18 +159,11 @@ const projects: Project[] = [
     title: "Дизайн проект 1",
     type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
-    images: [design_1_1, design_1_2]
-  },
-  {
-    id: 5,
-    title: "Дизайн проект 2",
-    type: "Дизайн проекты (флиппинг)",
-    description: "Здесь будет описание проекта",
-    images: [design_2_1, design_2_2, design_2_3, design_2_4]
+    images: [design_1_1, design_1_2, design_1_3, design_1_4, design_1_5, design_1_6]
   },
   {
     id: 6,
-    title: "Дизайн проект 3",
+    title: "Дизайн проект 2",
     type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
     images: [design_3_1, design_3_2, design_3_3, design_3_4]
@@ -198,17 +219,38 @@ const projects: Project[] = [
   },
   {
     id: 14,
-    title: "Дизайн проект 4",
+    title: "Дизайн проект 3",
     type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
     images: [design_4_1, design_4_2, design_4_3, design_4_4, design_4_5, design_4_6, design_4_7, design_4_8]
   },
   {
     id: 15,
-    title: "Дизайн проект 5",
+    title: "Дизайн проект 4",
     type: "Дизайн проекты (флиппинг)",
     description: "Здесь будет описание проекта",
     images: [design_5_1, design_5_2, design_5_3, design_5_4, design_5_5, design_5_6]
+  },
+  {
+    id: 16,
+    title: "Кулинарная студия Юлии Высоцкой",
+    type: "Отделка коммерческих помещений",
+    description: "650 м², Рублёвское шоссе",
+    images: [repair_6_1, repair_6_2, repair_6_3, repair_6_4, repair_6_5, repair_6_6, repair_6_7, repair_6_8, repair_6_9, repair_6_10]
+  },
+  {
+    id: 17,
+    title: "Вкусно и точка",
+    type: "Отделка коммерческих помещений",
+    description: "г. Краснодар, 350 м², внутренняя и внешняя отделка",
+    images: [vkusno_1, vkusno_2, vkusno_3, vkusno_4, vkusno_5, vkusno_6, vkusno_7, vkusno_8, vkusno_9, vkusno_10]
+  },
+  {
+    id: 18,
+    title: "Ресторан Гагава",
+    type: "Отделка коммерческих помещений",
+    description: "ТЦ форт отрадное, 350 м²",
+    images: [gagava_1, gagava_2, gagava_3, gagava_4, gagava_5, gagava_6]
   },
 ];
 
