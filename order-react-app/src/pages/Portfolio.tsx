@@ -136,21 +136,21 @@ const projects: Project[] = [
     id: 1,
     title: "Проектирование с последующим изготовлением и монтажом лестницы с применением холодного цинкования",
     type: "Изготовление металлоконструкций",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [withzh1, withzh2, withzh3, withzh4]
   },
   {
     id: 2,
     title: "Проектирование с последующим изготовлением и монтажом лестницы для многоуровневого офисного помещения",
     type: "Изготовление металлоконструкций",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [foroffieceroom2, foroffieceroom1, foroffieceroom3, foroffieceroom4]
   },
   {
     id: 3,
     title: "Проектирование с последующим изготовлением и монтажом наружной пожарной лестницы",
     type: "Изготовление металлоконструкций",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [last1, last2, last3, last4]
   },
 
@@ -158,35 +158,35 @@ const projects: Project[] = [
     id: 4,
     title: "Дизайн проект 1",
     type: "Дизайн проекты (флиппинг)",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [design_1_1, design_1_2, design_1_3, design_1_4, design_1_5, design_1_6]
   },
   {
     id: 6,
     title: "Дизайн проект 2",
     type: "Дизайн проекты (флиппинг)",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [design_3_1, design_3_2, design_3_3, design_3_4]
   },
   {
     id: 7,
     title: "Зиларт",
     type: "Ремонт жилых помещений",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [repair_1_1, repair_1_2, repair_1_3, repair_1_4, repair_1_5, repair_1_6, repair_1_7, repair_1_8, repair_1_9]
   },
   {
     id: 8,
     title: "Пресня",
     type: "Ремонт жилых помещений",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [repair_2_1, repair_2_2, repair_2_3]
   },
   {
     id: 9,
     title: "Некрасовка",
     type: "Ремонт жилых помещений",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [repair_3_1, repair_3_2, repair_3_3]
   },
   {
@@ -207,28 +207,28 @@ const projects: Project[] = [
     id: 12,
     title: "ВДНХ",
     type: "Ремонт жилых помещений",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [repair_4_1, repair_4_2, repair_4_3, repair_4_4, repair_4_5]
   },
   {
     id: 13,
     title: "Отделка С/У в коттедже",
     type: "Ремонт жилых помещений",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [repair_5_1, repair_5_2, repair_5_3, repair_5_4, repair_5_5, repair_5_6]
   },
   {
     id: 14,
     title: "Дизайн проект 3",
     type: "Дизайн проекты (флиппинг)",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [design_4_1, design_4_2, design_4_3, design_4_4, design_4_5, design_4_6, design_4_7, design_4_8]
   },
   {
     id: 15,
     title: "Дизайн проект 4",
     type: "Дизайн проекты (флиппинг)",
-    description: "Здесь будет описание проекта",
+    description: "",
     images: [design_5_1, design_5_2, design_5_3, design_5_4, design_5_5, design_5_6]
   },
   {
