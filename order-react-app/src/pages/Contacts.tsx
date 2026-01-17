@@ -12,7 +12,7 @@ const Contacts: React.FC = () => {
             <div className={styles.icon}>📍</div>
             <div>
               <p className={styles.label}>Адрес</p>
-              <p className={styles.value}>г. Москва, ул. Строительная, д. 15, офис 302</p>
+              <p className={styles.value}>г. Москва</p>
             </div>
           </div>
 
@@ -21,7 +21,7 @@ const Contacts: React.FC = () => {
             <div>
               <p className={styles.label}>Email</p>
               <p className={styles.value}>
-                <a href="mailto:info@stroyprofi.ru" className={styles.link}>info@stroyprofi.ru</a>
+                <a href="mailto:info@arsstr.ru" className={styles.link}>info@arsstr.ru</a>
               </p>
             </div>
           </div>
@@ -31,7 +31,7 @@ const Contacts: React.FC = () => {
             <div>
               <p className={styles.label}>Телефон</p>
               <p className={styles.value}>
-                <a href="tel:+74951234567" className={styles.link}>+7 (495) 123-45-67</a>
+                <a href="tel:+74951234567" className={styles.link}>+7 (977) 142-32-00</a>
               </p>
             </div>
           </div>
@@ -53,7 +53,7 @@ const Contacts: React.FC = () => {
             </div>
           </div> */}
 
-          <div className={styles.contactItem}>
+          {/* <div className={styles.contactItem}>
             <div className={styles.icon}>💬</div>
             <div>
               <p className={styles.label}>Написать в Telegram</p>
@@ -68,7 +68,7 @@ const Contacts: React.FC = () => {
                 </a>
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
