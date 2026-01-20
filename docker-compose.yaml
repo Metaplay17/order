@@ -5,10 +5,16 @@ services:
     build: ./server
     env_file: .env
     expose: ["3000"]
+    dns:
+    - 8.8.8.8
+    - 1.1.1.1
 
   frontend:
     build: ./order-react-app
     expose: ["80"]
+    dns:
+    - 8.8.8.8
+    - 1.1.1.1
 
   nginx:
     image: nginx:alpine
