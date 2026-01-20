@@ -22,6 +22,4 @@ COPY --from=builder /app/dist ./dist
 # Если нужны другие файлы (например, .env — но лучше передавать через переменные!)
 COPY --from=builder /app/.env ./.env
 
-EXPOSE 3000
-
 CMD ["node", "dist/index.js"]
