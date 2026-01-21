@@ -121,7 +121,7 @@
 /* АДАПТИВНЫЕ СТИЛИ */
 /* ================== */
 
-@media (max-width: 1280px) {
+@media (max-width: 1530px) {
   .navList {
     position: absolute;
     top: 70px;
