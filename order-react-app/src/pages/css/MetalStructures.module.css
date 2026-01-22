@@ -198,7 +198,7 @@
 
 
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .hero {
     height: auto;
     min-height: 500px;
@@ -220,7 +220,7 @@
 }
 
 /* Адаптивность для content_block и карточек */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .content_block {
     grid-template-columns: 1fr;
     gap: 1.5rem;

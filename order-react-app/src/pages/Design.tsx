@@ -25,6 +25,9 @@ const Design: React.FC = () => {
           <div className={styles.featureItem}>
             Все документы для получения разрешения на строительство
           </div>
+          <div className={styles.featureItem}>
+            Составление дизайн проектов для жилой и коммерческой недвижимости (от 1790р/м² по полу)
+          </div>
         </div>
 
         <div className={styles.buttons}>

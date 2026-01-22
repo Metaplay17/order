@@ -68,7 +68,7 @@ const rateLimiter = (req : express.Request, res : express.Response, next : expre
 
     info.count += 1;
     info.lastRequest = nowDate;
-    console.log(`COUNT: ${info.count}, LASTTIME: ${info.lastRequest}, BANNEDUNTIL: ${info.bannedUntil}`);
+    console.log(`IP: ${ip}, COUNT: ${info.count}, LAST_TIME: ${info.lastRequest}, BANNED_UNTIL: ${info.bannedUntil}`);
     requestStore.set(ip, info);
 
     next();
