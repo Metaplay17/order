@@ -43,9 +43,19 @@
   align-items: center;
 }
 
+.contactBox {
+  padding-left: 18vw;
+}
+
 .icon {
   font-size: 1.5rem;
   min-width: 32px;
+  text-align: center;
+}
+
+.iconEmail {
+  font-size: 1.8rem;
+  min-width: 38px;
   text-align: center;
 }
 
@@ -167,11 +177,21 @@
   background: #2c5282;
 }
 
+.telegramIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 24px;
+}
+
 /* Адаптивность */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .contactGrid {
     grid-template-columns: 1fr;
     gap: 1.75rem;
+  }
+
+  .contactBox {
+    padding-left: 42%;
   }
 
   .section {
@@ -191,5 +211,9 @@
 
   .value {
     font-size: 1rem;
+  }
+
+  .contactBox {
+    padding-left: 30%;
   }
 }

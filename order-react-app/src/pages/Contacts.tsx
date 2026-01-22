@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './css/Contacts.module.css';
 
+import telegram_icon from '../assets/telegram.png';
+
 const Contacts: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [message, setMessage] = useState('');
@@ -40,46 +42,56 @@ const Contacts: React.FC = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>Контакты</h2>
         <div className={styles.contactGrid}>
-          <div className={styles.contactItem}>
-            <div className={styles.icon}>📍</div>
-            <div>
-              <p className={styles.label}>Адрес</p>
-              <p className={styles.value}>г. Москва</p>
+          <div className={styles.contactBox}>
+            <div className={styles.contactItem}>
+              <div className={styles.icon}>📍</div>
+              <div>
+                <p className={styles.label}>Адрес</p>
+                <p className={styles.value}>г. Москва</p>
+              </div>
             </div>
           </div>
 
-          <div className={styles.contactItem}>
-            <div className={styles.icon}>📧</div>
-            <div>
-              <p className={styles.label}>Email</p>
-              <p className={styles.value}>
-                <a href="mailto:info@arsstr.ru" className={styles.link}>
-                  info@arsstr.ru
-                </a>
-              </p>
+          <div className={styles.contactBox}>
+            <div className={styles.contactItem}>
+              <div className={styles.iconEmail}>📧</div>
+              <div>
+                <p className={styles.label}>Email</p>
+                <p className={styles.value}>
+                  <a href="mailto:info@arsstr.ru" className={styles.link}>
+                    info@arsstr.ru
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className={styles.contactItem}>
-            <div className={styles.icon}>📞</div>
-            <div>
-              <p className={styles.label}>Телефон</p>
-              <p className={styles.value}>
-                <a href="tel:+79771423200" className={styles.link}>
-                  +7 (977) 142-32-00
-                </a>
-              </p>
+          <div className={styles.contactBox}>
+            <div className={styles.contactItem}>
+              <div className={styles.icon}>📞</div>
+              <div>
+                <p className={styles.label}>Телефон</p>
+                <p className={styles.value}>
+                  <a href="tel:+79771423200" className={styles.link}>
+                    +7 (977) 142-32-00
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className={styles.contactItem}>
-            <div className={styles.icon}>💬</div>
-            <div>
-              <button className={styles.connectButton} onClick={openModal}>
-                Связаться
-              </button>
+          <div className={styles.contactBox}>
+            <div className={styles.contactItem}>
+              <div className={styles.icon}>
+                  <img src={telegram_icon} alt="Telegram" className={styles.telegramIcon} />
+                </div>
+                <div>
+                  <button className={styles.connectButton} onClick={openModal}>
+                    Связаться
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
       </div>
 
